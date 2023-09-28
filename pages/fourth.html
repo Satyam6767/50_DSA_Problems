@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4: Reverse an array.</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous" />
+
+
+
+
+    <style>
+        * {
+            line-height: 2.0;
+            /* background-color: rgb(230, 210, 210); */
+        }
+
+        .hone {
+            margin: 10px;
+            margin-right: 25px;
+            margin-left: 25px;
+            border: 2px solid black;
+            text-align: center;
+            background-color: rgb(230, 210, 210);
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        }
+
+        .alllines {
+            margin: 10px;
+            margin-right: 25px;
+            margin-left: 25px;
+            padding: 20px;
+            border: 2px solid black;
+            /* text-align: center; */
+            background-color: rgb(230, 210, 210);
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        }
+
+        .secondpara {
+            margin: 10px;
+            margin-right: 25px;
+            margin-left: 25px;
+            padding: 20px;
+            border: 2px solid black;
+            /* text-align: center; */
+            background-color: rgb(230, 210, 210);
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+
+        }
+
+
+        mark {
+            background-color: yellow;
+            /* You can also add other styles as needed */
+        }.stopwatch{
+            font-size: 25px;
+        }
+    </style>
+
+<!-- ---------------------------------------------------------------------- -->
+    <script>
+        let timer;
+let seconds = 0;
+let minutes = 0;
+let hours = 0;
+
+function updateTime() {
+    seconds++;
+    if (seconds === 60) {
+        seconds = 0;
+        minutes++;
+        if (minutes === 60) {
+            minutes = 0;
+            hours++;
+        }
+    }
+
+    const timeString = `${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+    document.getElementById("display").textContent = timeString;
+}
+
+// Start the stopwatch automatically when the page loads
+window.addEventListener("load", function () {
+    timer = setInterval(updateTime, 1000);
+});
+
+    </script>
+    <!-- ---------------------------------------------------------------------- -->
+</head>
+
+<body>
+
+
+    <h1 class="hone">4: Reverse an array.
+        <div class="stopwatch">
+            <span>⏳⌚</span>
+            <span id="display">00:00:00</span>
+        </div>
+    </h1>
+    <div class="alllines">
+        <h4>Explaination:-</h4>
+        <p>
+            for Reverse an array , you can follow these steps:-
+            <br>
+
+
+
+            <mark>1.Initialize Two Pointers:- </mark> Start by initializing two pointers, one at the beginning of the array (let's call
+            it left) and the other at the end of the array (let's call it right).
+
+            left initially points to the first element of the array (index 0).
+            right initially points to the last element of the array (index n-1, where n is the number of elements in the
+            array).
+
+            <br>
+            <mark>2. Swap Elements:-</mark> Swap the elements pointed to by left and right. This effectively reverses the order of these
+            two elements.
+            <br>
+
+            <mark>3.Move Pointers Inward:-</mark> Increment left by one (move it to the right) and decrement right by one (move it to
+            the left).
+
+            Continue Swapping and Moving: Repeat steps 2 and 3 until left is greater than or equal to right. This means
+            you've reversed the entire array.
+            <br>
+
+            <mark>4.Array is Reversed:-</mark> At this point, the entire array will be reversed, and you're done.
+
+
+
+
+
+
+        </p>
+    </div>
+
+
+    <div class="secondpara">
+        <h4>solution-></h4>
+        <a href="https://ide.geeksforgeeks.org/online-cpp14-compiler/9dd614d3-fd8e-4481-8e66-053106ea7355"
+            target="_blank">View Code 1</a>
+        <br>
+        Time Complexity = O(n)
+        <br>
+        Space Complexity = O(n)
+    </div>
+</body>
+
+</html>

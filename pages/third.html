@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3: Calculate the sum of elements in an array.</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous" />
+
+
+
+
+    <style>
+        * {
+            line-height: 2.0;
+            /* background-color: rgb(230, 210, 210); */
+        }
+
+        .hone {
+            margin: 10px;
+            margin-right: 25px;
+            margin-left: 25px;
+            border: 2px solid black;
+            text-align: center;
+            background-color: rgb(230, 210, 210);
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        }
+
+        .alllines {
+            margin: 10px;
+            margin-right: 25px;
+            margin-left: 25px;
+            padding: 20px;
+            border: 2px solid black;
+            /* text-align: center; */
+            background-color: rgb(230, 210, 210);
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        }
+
+        .secondpara {
+            margin: 10px;
+            margin-right: 25px;
+            margin-left: 25px;
+            padding: 20px;
+            border: 2px solid black;
+            /* text-align: center; */
+            background-color: rgb(230, 210, 210);
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+
+        }
+
+
+        mark {
+            background-color: yellow;
+            /* You can also add other styles as needed */
+        }
+        .stopwatch{
+            font-size: 25px;
+        }
+    </style>
+
+<!-- ---------------------------------------------------------------------- -->
+    <script>
+        let timer;
+let seconds = 0;
+let minutes = 0;
+let hours = 0;
+
+function updateTime() {
+    seconds++;
+    if (seconds === 60) {
+        seconds = 0;
+        minutes++;
+        if (minutes === 60) {
+            minutes = 0;
+            hours++;
+        }
+    }
+
+    const timeString = `${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+    document.getElementById("display").textContent = timeString;
+}
+
+// Start the stopwatch automatically when the page loads
+window.addEventListener("load", function () {
+    timer = setInterval(updateTime, 1000);
+});
+
+    </script>
+    <!-- ---------------------------------------------------------------------- -->
+</head>
+
+<body>
+
+
+    <h1 class="hone">3: Calculate the sum of elements in an array.
+        <div class="stopwatch">
+            <span>⏳⌚</span>
+            <span id="display">00:00:00</span>
+        </div>
+    </h1>
+    <div class="alllines">
+        <h4>Explaination:-</h4>
+        <p>
+            To find the sum of elements in an array., you can follow these steps:-
+            <br>
+
+
+
+            <mark>1. Variable Declaration:- </mark>Declare an integer variable n. This variable will be used to store the number of
+            elements in the array.
+            <br>
+            <mark>2. Input for n:- </mark>Read an integer value from the user using the standard input and store it in the variable
+            n. This value represents the number of elements in the array.
+            <br>
+            <mark>3. Array Declaration:- </mark>Declare an integer array arr with a size of n. This array will be used to store the
+            elements of the array.
+            <br>
+
+
+            <mark>4.Input for Array Elements:- </mark>Use a for loop to iterate from 0 to n-1.
+            Inside the loop, read an integer value from the user using the standard input and store it in the arr array
+            at the current index i. Repeat this process for each element of the array.
+            <br>
+
+            <mark>5. Initialization of Sum:- </mark>Initialize an integer variable sum to 0. This variable will be used to accumulate
+            the sum of the array elements.
+            <br>
+            <mark>6. Sum Calculation:- </mark>Use another for loop to iterate from 0 to n-1.
+            Inside the loop, add the value of the current element in the arr array (at index i) to the sum variable.
+            This step repeats for each element in the array.
+            <br>
+            <mark>7. Output Sum:- </mark>Print the value of the sum variable to the standard output. This printed value represents
+            the sum of all the elements in the array.
+            <br>
+
+
+
+
+
+
+
+        </p>
+    </div>
+
+
+    <div class="secondpara">
+        <h4>solution-></h4>
+        <a href="https://ide.geeksforgeeks.org/online-cpp14-compiler/6d20dde8-705a-40c8-851d-c59d5e0eee72"
+            target="_blank">View Code 1</a>
+        <br>
+        Time Complexity = O(n)
+        <br>
+        Space Complexity = O(n)
+    </div>
+</body>
+
+</html>

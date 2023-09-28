@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2: Find the minimum element in an array.</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous" />
+
+
+
+
+    <style>
+        * {
+            line-height: 2.0;
+            /* background-color: rgb(230, 210, 210); */
+        }
+
+        .hone {
+            margin: 10px;
+            margin-right: 25px;
+            margin-left: 25px;
+            border: 2px solid black;
+            text-align: center;
+            background-color: rgb(230, 210, 210);
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        }
+
+        .alllines {
+            margin: 10px;
+            margin-right: 25px;
+            margin-left: 25px;
+            padding: 20px;
+            border: 2px solid black;
+            /* text-align: center; */
+            background-color: rgb(230, 210, 210);
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        }
+
+        .secondpara{
+            margin: 10px;
+            margin-right: 25px;
+            margin-left: 25px;
+            padding: 20px;
+            border: 2px solid black;
+            /* text-align: center; */
+            background-color: rgb(230, 210, 210);
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        
+        }
+
+
+        mark {
+    background-color: yellow;
+    /* You can also add other styles as needed */
+  }
+        .stopwatch{
+            font-size: 25px;
+        }
+    </style>
+
+<!-- ---------------------------------------------------------------------- -->
+    <script>
+        let timer;
+let seconds = 0;
+let minutes = 0;
+let hours = 0;
+
+function updateTime() {
+    seconds++;
+    if (seconds === 60) {
+        seconds = 0;
+        minutes++;
+        if (minutes === 60) {
+            minutes = 0;
+            hours++;
+        }
+    }
+
+    const timeString = `${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+    document.getElementById("display").textContent = timeString;
+}
+
+// Start the stopwatch automatically when the page loads
+window.addEventListener("load", function () {
+    timer = setInterval(updateTime, 1000);
+});
+
+    </script>
+    <!-- ---------------------------------------------------------------------- -->
+</head>
+
+<body>
+
+
+    <h1 class="hone">2: Find the minimum element in an array.
+        <div class="stopwatch">
+            <span>⏳⌚</span>
+            <span id="display">00:00:00</span>
+        </div>
+    </h1>
+    <div class="alllines">
+        <h4>Explaination:-</h4>
+        <p>
+            To find the minimum element in an array, you can follow these steps:-
+                    <br>
+            1. <mark>Initialize a Variable:- </mark> Start by initializing a variable, let's call it min, to store the minimum element
+            found so far. You can set it to the first element of the array.
+            <br>
+
+            2. <mark>Iterate Through the Array:-</mark> Use a loop to iterate through the entire array, starting from the second element
+            (index 1) and moving to the last element. <br>
+
+            3. <mark> Comparison:-</mark> In each iteration of the loop, compare the current element with the value stored in the min
+            variable. <br>
+
+            4. <mark>Update Minimum:- </mark> If the current element is smaller than the value stored in min, update the min variable with
+            the value of the current element. This step ensures that max always holds the minimum value encountered so
+            far. <br>
+
+            5. <mark>Repeat:- </mark>Continue iterating through the array, comparing each element with the current min, and updating min
+            whenever a smaller element is found. <br>
+
+            6. <mark>Completion of Loop:- </mark> Once you've gone through the entire array, the variable max will hold the minimum
+            element in the array. <br>
+
+            7. <mark>Result:- </mark> You can then return the value of min as the minimum element in the array or use it for further
+            processing, such as displaying the minimum value or performing additional operations based on the minimum
+            value. <br>
+        </p>
+    </div>
+
+
+    <div class="secondpara">
+        <h4>solution-></h4>
+        <a href="https://ide.geeksforgeeks.org/online-cpp14-compiler/e4ddfa9f-5875-46c3-b760-e5f40b412deb" target="_blank" >View Code 1</a>
+        <br>
+        Time Complexity = O(n)
+        <br>
+        Space Complexity = O(n)
+    </div>
+</body>
+
+</html>
