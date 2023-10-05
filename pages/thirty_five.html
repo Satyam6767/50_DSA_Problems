@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>34: Implement insertion sort.</title>
+    <title>35: Implement Merge Sort</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous" />
 
@@ -113,7 +113,7 @@
 <body>
 
 
-    <h1 class="hone">34: Implement insertion sort.
+    <h1 class="hone">35: Implement Merge Sort
         <div class="stopwatch">
             <span>⏳⌚</span>
             <span id="display">00:00:00</span>
@@ -125,7 +125,7 @@
     <div class="alllines2">
         <h4>Question:-</h4>
         <p>
-            Sort given array using insertion sort.
+            Sort given array using merge sort.
             <br>
             Example 1:
             <br>
@@ -159,44 +159,36 @@
 
             <!-- ---------------------------------------------------------------------------------------------------->
 
-            
 
-            <mark>1. Function insertionSort:-</mark>The insertionSort function takes an integer array arr[] and its size n as parameters.
-            <br>
-            
-            <mark>2. Outer Loop:-</mark>
-            The outer loop iterates from i = 1 to i = n-1. This loop considers each element in the unsorted part of the array one by one.
 
-            <br>
 
-            <mark>3. Key Element:-</mark>For each element at index i, it is temporarily stored in the variable key.
-            <br>
-
-            <mark>4. Inner Loop:-</mark>
-
-            The inner loop runs from j = i - 1 to j = 0. This loop compares the element key with the elements in the sorted part of the array (elements at indices 0 to i-1).
-            It checks if the element at index j is greater than key. If so, it shifts the larger element to the right by one position to make room for key.
-            <br>
-
-            
-            
-           
-            <mark>5.Placing key in Correct Position:-</mark>
-                Once the inner loop finishes, it means that the correct position for key has been found, and it is placed in that position (arr[j + 1] = key).
-            <br>
-            
-            <mark>6.Main Function:-</mark>
-
-            In the main function:
-            The user inputs the number of elements n.
-            An integer array arr of size n is declared to store the input elements.
-            The user inputs the array elements.
-            The insertionSort function is called to sort the array in ascending order using the Insertion Sort algorithm.
-            Finally, the sorted array is printed.
 
             <!-- ---------------------------------------------------------------------------------------------------->
-            
-           
+            <mark>1. Function merge:-</mark>The merge function takes an integer array arr[], the left index left, the middle index mid, and the right
+            index right as parameters.
+            It performs the merging step by merging two subarrays arr[left..mid] and arr[mid+1..right] into a single
+            sorted subarray.
+            <br>
+            <mark>2. Function mergeSort:-</mark>The mergeSort function takes an integer array arr[], the left index left, and the right index right as
+            parameters.
+            It recursively divides the array into two halves until it reaches subarrays with only one element.
+            Then, it merges these subarrays back together in sorted order.
+            <br>
+            <mark>3. Merge Operation:-</mark>
+            The merging step (handled by the merge function) involves:
+            Creating temporary arrays leftArr and rightArr to store the elements of the left and right subarrays.
+            Copying data from the main array arr[] into these temporary arrays.
+            Merging the elements from the temporary arrays back into the main array while maintaining the order.
+            <br>
+
+            <mark>4. Main Function:-</mark>
+            In the main function:
+            An integer array arr is declared with unsorted elements.
+            The size n of the array is calculated.
+            The original array is displayed.
+            The mergeSort function is called to sort the array in ascending order using the Merge Sort algorithm.
+            The sorted array is displayed.
+
 
 
             <!-- ---------------------------------------------------------------------------------------------------- -->
@@ -210,10 +202,10 @@
 
     <div class="secondpara">
         <h4>solution-></h4>
-        <a href="https://ide.geeksforgeeks.org/online-cpp14-compiler/9689a909-b773-4218-8c1b-2f999c03bcf2"
+        <a href="https://ide.geeksforgeeks.org/online-cpp14-compiler/9207a1a3-77f1-4deb-ba3f-3b8019c3f3e4"
             target="_blank">View Code 1</a>
         <br>
-        Time Complexity = O(n^2)
+        Time Complexity = O(N log(N))
         <br>
         Space Complexity = O(n)
     </div>

@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>34: Implement insertion sort.</title>
+    <title>36: Implement quicksort.</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous" />
 
@@ -113,7 +113,7 @@
 <body>
 
 
-    <h1 class="hone">34: Implement insertion sort.
+    <h1 class="hone">36: Implement quicksort.
         <div class="stopwatch">
             <span>⏳⌚</span>
             <span id="display">00:00:00</span>
@@ -125,7 +125,7 @@
     <div class="alllines2">
         <h4>Question:-</h4>
         <p>
-            Sort given array using insertion sort.
+            Sort given array using quick sort.
             <br>
             Example 1:
             <br>
@@ -159,44 +159,37 @@
 
             <!-- ---------------------------------------------------------------------------------------------------->
 
-            
 
-            <mark>1. Function insertionSort:-</mark>The insertionSort function takes an integer array arr[] and its size n as parameters.
+
+
+
+            <!-- ---------------------------------------------------------------------------------------------------->
+            <mark>1. Function partition:-</mark>
+
+            The partition function takes an integer array arr[], the low index, and the high index as parameters.
+            It selects a pivot element (typically the last element of the array) and partitions the array into two
+            subarrays:
+            Elements less than the pivot on the left.
+            Elements greater than the pivot on the right.
+            The pivot is placed in its final sorted position, and its index (the pivot index) is returned.
             <br>
-            
-            <mark>2. Outer Loop:-</mark>
-            The outer loop iterates from i = 1 to i = n-1. This loop considers each element in the unsorted part of the array one by one.
+            <mark>2. Function quickSort:-</mark>
 
+            The quickSort function takes an integer array arr[], the low index, and the high index as parameters.
+            It recursively sorts the subarrays on both sides of the pivot:
+            The left subarray contains elements smaller than the pivot.
+            The right subarray contains elements greater than the pivot.
+            The sorting process continues until the entire array is sorted.
             <br>
-
-            <mark>3. Key Element:-</mark>For each element at index i, it is temporarily stored in the variable key.
-            <br>
-
-            <mark>4. Inner Loop:-</mark>
-
-            The inner loop runs from j = i - 1 to j = 0. This loop compares the element key with the elements in the sorted part of the array (elements at indices 0 to i-1).
-            It checks if the element at index j is greater than key. If so, it shifts the larger element to the right by one position to make room for key.
-            <br>
-
-            
-            
-           
-            <mark>5.Placing key in Correct Position:-</mark>
-                Once the inner loop finishes, it means that the correct position for key has been found, and it is placed in that position (arr[j + 1] = key).
-            <br>
-            
-            <mark>6.Main Function:-</mark>
+            <mark>3. Main Function:-</mark>
 
             In the main function:
             The user inputs the number of elements n.
             An integer array arr of size n is declared to store the input elements.
             The user inputs the array elements.
-            The insertionSort function is called to sort the array in ascending order using the Insertion Sort algorithm.
+            The quickSort function is called to sort the array in ascending order using the Quick Sort algorithm.
             Finally, the sorted array is printed.
 
-            <!-- ---------------------------------------------------------------------------------------------------->
-            
-           
 
 
             <!-- ---------------------------------------------------------------------------------------------------- -->
@@ -210,10 +203,10 @@
 
     <div class="secondpara">
         <h4>solution-></h4>
-        <a href="https://ide.geeksforgeeks.org/online-cpp14-compiler/9689a909-b773-4218-8c1b-2f999c03bcf2"
+        <a href="https://ide.geeksforgeeks.org/online-cpp14-compiler/e2d8a2ff-a9d4-4d74-87ad-60e01ff7cea4"
             target="_blank">View Code 1</a>
         <br>
-        Time Complexity = O(n^2)
+        Time Complexity = O(N^2)
         <br>
         Space Complexity = O(n)
     </div>
