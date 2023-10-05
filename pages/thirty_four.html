@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>34: Implement insertion sort.</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous" />
+
+
+
+
+    <style>
+        * {
+            line-height: 2.0;
+            /* background-color: rgb(230, 210, 210); */
+        }
+
+        .hone {
+            margin: 10px;
+            margin-right: 25px;
+            margin-left: 25px;
+            border: 2px solid black;
+            text-align: center;
+            background-color: rgb(230, 210, 210);
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        }
+
+        .alllines2 {
+            margin: 10px;
+            margin-right: 25px;
+            margin-left: 25px;
+            padding: 20px;
+            /* width: 40%; */
+            border: 2px solid black;
+            /* text-align: center; */
+            background-color: rgb(230, 210, 210);
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            /* display: inline-block; */
+
+        }
+
+        .alllines {
+            margin: 10px;
+            margin-right: 25px;
+            margin-left: 25px;
+            padding: 20px;
+            /* width: 40%; */
+            border: 2px solid black;
+            /* text-align: center; */
+            background-color: rgb(230, 210, 210);
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            /* display: inline-block; */
+
+        }
+
+
+        .secondpara {
+            margin: 10px;
+            margin-right: 25px;
+            margin-left: 25px;
+            padding: 20px;
+            border: 2px solid black;
+            /* text-align: center; */
+            background-color: rgb(230, 210, 210);
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+
+        }
+
+
+        mark {
+            background-color: yellow;
+            /* You can also add other styles as needed */
+        }
+
+        .stopwatch {
+            font-size: 25px;
+        }
+    </style>
+
+    <!-- ---------------------------------------------------------------------- -->
+    <script>
+        let timer;
+        let seconds = 0;
+        let minutes = 0;
+        let hours = 0;
+
+        function updateTime() {
+            seconds++;
+            if (seconds === 60) {
+                seconds = 0;
+                minutes++;
+                if (minutes === 60) {
+                    minutes = 0;
+                    hours++;
+                }
+            }
+
+            const timeString = `${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+            document.getElementById("display").textContent = timeString;
+        }
+
+        // Start the stopwatch automatically when the page loads
+        window.addEventListener("load", function () {
+            timer = setInterval(updateTime, 1000);
+        });
+
+    </script>
+    <!-- ---------------------------------------------------------------------- -->
+</head>
+
+<body>
+
+
+    <h1 class="hone">34: Implement insertion sort.
+        <div class="stopwatch">
+            <span>⏳⌚</span>
+            <span id="display">00:00:00</span>
+        </div>
+    </h1>
+
+
+
+    <div class="alllines2">
+        <h4>Question:-</h4>
+        <p>
+            Sort given array using insertion sort.
+            <br>
+            Example 1:
+            <br>
+            Input:
+            <br>
+            N=6
+            <br>
+            arr[] = {3, 2, 9 , 1, 15, 10}
+            <br>
+            Output: {1, 2, 3, 9, 10, 15}
+
+
+            <br>
+            Example 2:
+            <br>
+            Input:
+            <br>
+            N=4
+            <br>
+            arr[] = {15. -2, 1, 18}
+            <br>
+            Output: {-2, 1, 15, 18}
+            <br>
+        </p>
+    </div>
+    <div class="alllines">
+        <h4>Steps to solve:-</h4>
+        <p>
+
+
+
+            <!-- ---------------------------------------------------------------------------------------------------->
+
+            
+
+            <mark>1. Function insertionSort:-</mark>The insertionSort function takes an integer array arr[] and its size n as parameters.
+            <br>
+            
+            <mark>2. Outer Loop:-</mark>
+            The outer loop iterates from i = 1 to i = n-1. This loop considers each element in the unsorted part of the array one by one.
+
+            <br>
+
+            <mark>3. Key Element:-</mark>For each element at index i, it is temporarily stored in the variable key.
+            <br>
+
+            <mark>4. Inner Loop:-</mark>
+
+            The inner loop runs from j = i - 1 to j = 0. This loop compares the element key with the elements in the sorted part of the array (elements at indices 0 to i-1).
+            It checks if the element at index j is greater than key. If so, it shifts the larger element to the right by one position to make room for key.
+            <br>
+
+            
+            
+           
+            <mark>4.Placing key in Correct Position:-</mark>
+                Once the inner loop finishes, it means that the correct position for key has been found, and it is placed in that position (arr[j + 1] = key).
+            <br>
+            
+            <mark>5.Main Function:-</mark>
+
+            In the main function:
+            The user inputs the number of elements n.
+            An integer array arr of size n is declared to store the input elements.
+            The user inputs the array elements.
+            The insertionSort function is called to sort the array in ascending order using the Insertion Sort algorithm.
+            Finally, the sorted array is printed.
+
+            <!-- ---------------------------------------------------------------------------------------------------->
+            
+           
+
+
+            <!-- ---------------------------------------------------------------------------------------------------- -->
+
+
+        </p>
+    </div>
+
+
+
+
+    <div class="secondpara">
+        <h4>solution-></h4>
+        <a href="https://ide.geeksforgeeks.org/online-cpp14-compiler/9689a909-b773-4218-8c1b-2f999c03bcf2"
+            target="_blank">View Code 1</a>
+        <br>
+        Time Complexity = O(n^2)
+        <br>
+        Space Complexity = O(n)
+    </div>
+</body>
+
+</html>

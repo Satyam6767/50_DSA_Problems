@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>32: Implement bubble sort.</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous" />
+
+
+
+
+    <style>
+        * {
+            line-height: 2.0;
+            /* background-color: rgb(230, 210, 210); */
+        }
+
+        .hone {
+            margin: 10px;
+            margin-right: 25px;
+            margin-left: 25px;
+            border: 2px solid black;
+            text-align: center;
+            background-color: rgb(230, 210, 210);
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        }
+
+        .alllines2 {
+            margin: 10px;
+            margin-right: 25px;
+            margin-left: 25px;
+            padding: 20px;
+            /* width: 40%; */
+            border: 2px solid black;
+            /* text-align: center; */
+            background-color: rgb(230, 210, 210);
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            /* display: inline-block; */
+
+        }
+
+        .alllines {
+            margin: 10px;
+            margin-right: 25px;
+            margin-left: 25px;
+            padding: 20px;
+            /* width: 40%; */
+            border: 2px solid black;
+            /* text-align: center; */
+            background-color: rgb(230, 210, 210);
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            /* display: inline-block; */
+
+        }
+
+
+        .secondpara {
+            margin: 10px;
+            margin-right: 25px;
+            margin-left: 25px;
+            padding: 20px;
+            border: 2px solid black;
+            /* text-align: center; */
+            background-color: rgb(230, 210, 210);
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+
+        }
+
+
+        mark {
+            background-color: yellow;
+            /* You can also add other styles as needed */
+        }
+
+        .stopwatch {
+            font-size: 25px;
+        }
+    </style>
+
+    <!-- ---------------------------------------------------------------------- -->
+    <script>
+        let timer;
+        let seconds = 0;
+        let minutes = 0;
+        let hours = 0;
+
+        function updateTime() {
+            seconds++;
+            if (seconds === 60) {
+                seconds = 0;
+                minutes++;
+                if (minutes === 60) {
+                    minutes = 0;
+                    hours++;
+                }
+            }
+
+            const timeString = `${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+            document.getElementById("display").textContent = timeString;
+        }
+
+        // Start the stopwatch automatically when the page loads
+        window.addEventListener("load", function () {
+            timer = setInterval(updateTime, 1000);
+        });
+
+    </script>
+    <!-- ---------------------------------------------------------------------- -->
+</head>
+
+<body>
+
+
+    <h1 class="hone">32: Implement bubble sort.
+        <div class="stopwatch">
+            <span>⏳⌚</span>
+            <span id="display">00:00:00</span>
+        </div>
+    </h1>
+
+
+
+    <div class="alllines2">
+        <h4>Question:-</h4>
+        <p>
+            Sort given array using bubble sort.
+            <br>
+            Example 1:
+            <br>
+            Input:
+            <br>
+            N=6
+            <br>
+            arr[] = {3, 2, 9 , 1, 15, 10}
+            <br>
+            Output: {1, 2, 3, 9, 10, 15}
+
+
+            <br>
+            Example 2:
+            <br>
+            Input:
+            <br>
+            N=4
+            <br>
+            arr[] = {15. -2, 1, 18}
+            <br>
+            Output: {-2, 1, 15, 18}
+            <br>
+        </p>
+    </div>
+    <div class="alllines">
+        <h4>Steps to solve:-</h4>
+        <p>
+
+            <mark>1. BubbleSort function:-</mark>This is the implementation of the Bubble Sort algorithm.
+            The bubblesort function takes an integer array arr[] and its size n as parameters.
+            It uses two nested loops to compare adjacent elements in the array and swap them if they are in the wrong
+            order.
+            The outer loop (i) iterates from 0 to n-2, and the inner loop (j) iterates from 0 to n-i-2.
+            If the element at arr[j] is greater than the element at arr[j+1], they are swapped.
+            <br>
+            <mark>2. Main function:-</mark>
+            In the main function:
+            It takes an integer n as input, which represents the number of elements in the array.
+            It declares an integer array arr[] of size n to store the input elements.
+            It reads n integers from the standard input (usually the keyboard) and stores them in the array arr[].
+            It then calls the bubblesort function to sort the array in ascending order.
+            Finally, it prints the sorted array elements separated by spaces.
+            <br>
+
+            <mark>3. Bubble Sort Execution:-</mark>
+
+            The bubblesort function is called to sort the array arr[] in ascending order using the Bubble Sort algorithm.
+            Bubble Sort involves comparing adjacent elements and swapping them if necessary, repeatedly until the entire array is sorted.
+            <br>
+            <mark>4. Output:-</mark>
+            Finally, After sorting is completed, the main function prints the sorted array elements separated by spaces.
+
+
+        </p>
+    </div>
+
+
+
+
+    <div class="secondpara">
+        <h4>solution-></h4>
+        <a href="https://ide.geeksforgeeks.org/online-cpp14-compiler/c2bbf157-11c1-45cc-8810-38fb36ccd1e5"
+            target="_blank">View Code 1</a>
+        <br>
+        Time Complexity = O(n^2)
+        <br>
+        Space Complexity = O(n)
+    </div>
+</body>
+
+</html>
