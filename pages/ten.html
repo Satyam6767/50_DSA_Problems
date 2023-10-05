@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>10: Merge two sorted arrays.</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous" />
+
+
+
+
+    <style>
+        * {
+            line-height: 2.0;
+            /* background-color: rgb(230, 210, 210); */
+        }
+
+        .hone {
+            margin: 10px;
+            margin-right: 25px;
+            margin-left: 25px;
+            border: 2px solid black;
+            text-align: center;
+            background-color: rgb(230, 210, 210);
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        }
+
+        .alllines2 {
+            margin: 10px;
+            margin-right: 25px;
+            margin-left: 25px;
+            padding: 20px;
+            /* width: 40%; */
+            border: 2px solid black;
+            /* text-align: center; */
+            background-color: rgb(230, 210, 210);
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            /* display: inline-block; */
+
+        }
+
+        .alllines {
+            margin: 10px;
+            margin-right: 25px;
+            margin-left: 25px;
+            padding: 20px;
+            /* width: 40%; */
+            border: 2px solid black;
+            /* text-align: center; */
+            background-color: rgb(230, 210, 210);
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            /* display: inline-block; */
+
+        }
+
+
+        .secondpara {
+            margin: 10px;
+            margin-right: 25px;
+            margin-left: 25px;
+            padding: 20px;
+            border: 2px solid black;
+            /* text-align: center; */
+            background-color: rgb(230, 210, 210);
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+
+        }
+
+
+        mark {
+            background-color: yellow;
+            /* You can also add other styles as needed */
+        }
+
+        .stopwatch {
+            font-size: 25px;
+        }
+    </style>
+
+    <!-- ---------------------------------------------------------------------- -->
+    <script>
+        let timer;
+        let seconds = 0;
+        let minutes = 0;
+        let hours = 0;
+
+        function updateTime() {
+            seconds++;
+            if (seconds === 60) {
+                seconds = 0;
+                minutes++;
+                if (minutes === 60) {
+                    minutes = 0;
+                    hours++;
+                }
+            }
+
+            const timeString = `${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+            document.getElementById("display").textContent = timeString;
+        }
+
+        // Start the stopwatch automatically when the page loads
+        window.addEventListener("load", function () {
+            timer = setInterval(updateTime, 1000);
+        });
+
+    </script>
+    <!-- ---------------------------------------------------------------------- -->
+</head>
+
+<body>
+
+
+    <h1 class="hone">10: Merge two sorted arrays.
+        <div class="stopwatch">
+            <span>⏳⌚</span>
+            <span id="display">00:00:00</span>
+        </div>
+    </h1>
+
+
+
+    <div class="alllines2">
+        <h4>Question:-</h4>
+        <p>
+            Given two array of size n and m, Merge two sorted arrays.
+            <br>
+            Example 1:
+            <br>
+            Input:
+            <br>
+            N=4 M =4
+            <br>
+            arr1[] = {1, 2, 3 , 4}
+            <br>
+            arr2[] = {3, 4, 9 , 11}
+            <br>
+            Output: {1, 2, 3 , 3, 4, 4, 9 , 11}
+
+            <br>
+            Example 2:
+            <br>
+            Input:
+            <br>
+            N=5 M =5
+            <br>
+            arr1[] = {1, 2, 3 , 4, 9}
+            <br>
+            arr2[] = {3, 4, 9 , 11, 22}
+            <br>
+            Output: {1, 2, 3, 3, 4, 4, 9 , 9,  11, 22}
+            <br>
+        </p>
+    </div>
+    <div class="alllines">
+        <h4>Steps to solve:-</h4>
+        <p>
+
+            <mark>1. Input Reading:-</mark>The code starts by reading two integers, n and m, which represent the sizes
+            of the two input arrays.
+            It then initializes two arrays, arr1 and arr2, of sizes n and m, respectively.
+            The elements of arr1 and arr2 are read from the standard input using cin.
+            <br>
+            <mark>2. Merging Process:-</mark>
+            An array arr3 of size n + m is initialized to store the merged elements. <br>
+            Three integer variables, i, j, and k, are initialized to keep track of the current positions in arr1, arr2,
+            and arr3, respectively. <br>
+            A while loop is used to merge elements from arr1 and arr2 into arr3 while maintaining the sorted order. This
+            loop runs until either arr1 or arr2 is fully processed. <br>
+            If the current element from arr1 is smaller than the current element from arr2, it is inserted into arr3,
+            and both i and k are incremented. <br>
+            Otherwise, if the current element from arr2 is smaller or equal, it is inserted into arr3, and both j and k
+            are incremented. <br>
+            After the first while loop, one of the input arrays (arr1 or arr2) may still have remaining elements. Two
+            more while loops copy any remaining elements from arr1 and arr2 to arr3.
+            <br>
+            
+            <mark>3. Sorting the Merged Array:-</mark>After merging, the sort function is used to sort the merged array arr3 in ascending order. Sorting is
+            required because the merged elements may not be in sorted order initially.
+            <br>
+            <mark>4. Output:-</mark>
+            Finally, the code prints the sorted merged array arr3 with space-separated elements to the standard output
+            using a for loop.
+
+
+        </p>
+    </div>
+
+
+
+
+    <div class="secondpara">
+        <h4>solution-></h4>
+        <a href="https://ide.geeksforgeeks.org/online-cpp14-compiler/a5b38054-67be-4b3c-a930-8158a5fafbc0"
+            target="_blank">View Code 1</a>
+        <br>
+        Time Complexity = log(n + m)
+        <br>
+        Space Complexity = O(n+m)
+    </div>
+</body>
+
+</html>
