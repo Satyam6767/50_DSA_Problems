@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>30. Implement binary search in a sorted array.</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous" />
+
+
+
+
+    <style>
+        * {
+            line-height: 2.0;
+            /* background-color: rgb(230, 210, 210); */
+        }
+
+        .hone {
+            margin: 10px;
+            margin-right: 25px;
+            margin-left: 25px;
+            border: 2px solid black;
+            text-align: center;
+            background-color: rgb(230, 210, 210);
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        }
+
+        .alllines2 {
+            margin: 10px;
+            margin-right: 25px;
+            margin-left: 25px;
+            padding: 20px;
+            /* width: 40%; */
+            border: 2px solid black;
+            /* text-align: center; */
+            background-color: rgb(230, 210, 210);
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            /* display: inline-block; */
+
+        }
+
+        .alllines {
+            margin: 10px;
+            margin-right: 25px;
+            margin-left: 25px;
+            padding: 20px;
+            /* width: 40%; */
+            border: 2px solid black;
+            /* text-align: center; */
+            background-color: rgb(230, 210, 210);
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            /* display: inline-block; */
+
+        }
+
+
+        .secondpara {
+            margin: 10px;
+            margin-right: 25px;
+            margin-left: 25px;
+            padding: 20px;
+            border: 2px solid black;
+            /* text-align: center; */
+            background-color: rgb(230, 210, 210);
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+
+        }
+
+
+        mark {
+            background-color: yellow;
+            /* You can also add other styles as needed */
+        }
+
+        .stopwatch {
+            font-size: 25px;
+        }
+    </style>
+
+    <!-- ---------------------------------------------------------------------- -->
+    <script>
+        let timer;
+        let seconds = 0;
+        let minutes = 0;
+        let hours = 0;
+
+        function updateTime() {
+            seconds++;
+            if (seconds === 60) {
+                seconds = 0;
+                minutes++;
+                if (minutes === 60) {
+                    minutes = 0;
+                    hours++;
+                }
+            }
+
+            const timeString = `${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+            document.getElementById("display").textContent = timeString;
+        }
+
+        // Start the stopwatch automatically when the page loads
+        window.addEventListener("load", function () {
+            timer = setInterval(updateTime, 1000);
+        });
+
+    </script>
+    <!-- ---------------------------------------------------------------------- -->
+</head>
+
+<body>
+
+
+    <h1 class="hone">30: Implement binary search in a sorted array.
+        <div class="stopwatch">
+            <span>⏳⌚</span>
+            <span id="display">00:00:00</span>
+        </div>
+    </h1>
+
+
+
+    <div class="alllines2">
+        <h4>Question:-</h4>
+        <p>
+            Implement binary search in a sorted array.
+            <br>
+            Example 1:
+            <br>
+            Input:
+            <br>
+            N=6, target = 3
+            <br>
+            arr[] = {5, 8, 3, 15, 19, 22}
+            <br>
+            Output: 2nd index
+
+
+            <br>
+            Example 1:
+            <br>
+            Input:
+            <br>
+            N=6, target = 9
+            <br>
+            arr[] = {5, 8, 3, 15, 19, 22}
+            <br>
+            Output: Not found
+            <br>
+        </p>
+    </div>
+    <div class="alllines">
+        <h4>Steps to solve:-</h4>
+        <p>
+
+
+
+            <!-- ---------------------------------------------------------------------------------------------------->
+
+
+
+
+
+            <!-- ---------------------------------------------------------------------------------------------------->
+            <mark>1. Function binarySearch:-</mark>
+            The binarySearch function takes several parameters: =>
+            <br>the sorted integer array arr[], the left index left, the
+            right index right, and the target element target.
+            <br>
+            It performs binary search iteratively, dividing the search range in half in each iteration until the target
+            element is found or the search range is empty. <br>
+            If the middle element equals the target, it returns the index of the middle element as the result.
+            <br>If the middle element is smaller than the target, it narrows the search range to the right half by updating
+            left.
+            <br>
+            If the middle element is larger than the target, it narrows the search range to the left half by updating
+            right.
+            <br>
+            If the target element is not found, it returns -1 to indicate that the target is not in the array. <br>
+            <mark>2. Main Function:- </mark>
+
+            In the main function:
+            The user inputs two values: n (the number of elements in the array) and target (the element to search for).
+            An integer array arr of size n is declared to store the input elements.
+            The user inputs n elements into the array.
+            The binarySearch function is called with the given array, search range (0 to n-1), and the target element.
+            The result of the binary search is displayed, indicating whether the target element was found and at which
+            index.
+
+
+
+            <!-- ---------------------------------------------------------------------------------------------------- -->
+
+
+        </p>
+    </div>
+
+
+
+
+    <div class="secondpara">
+        <h4>solution-></h4>
+        <a href="https://ide.geeksforgeeks.org/online-cpp14-compiler/5ab1e0f7-a5e8-48f4-975d-2258426f36d4"
+            target="_blank">View Code 1</a>
+        <br>
+        Time Complexity = O(log(N))
+        <br>
+        Space Complexity = O(1)
+    </div>
+</body>
+
+</html>
