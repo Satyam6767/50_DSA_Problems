@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>11: Reverse a string.</title>
+    <title>15: Check if two strings are anagrams of each other. </title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous" />
 
@@ -113,7 +113,7 @@
 <body>
 
 
-    <h1 class="hone">11: Reverse a string.
+    <h1 class="hone">15: Check if two strings are anagrams of each other.
         <div class="stopwatch">
             <span>⏳⌚</span>
             <span id="display">00:00:00</span>
@@ -125,57 +125,50 @@
     <div class="alllines2">
         <h4>Question:-</h4>
         <p>
-            Reverse a string.
+            Check if two strings are anagrams of each other.
             <br>
             Example 1:
             <br>
             Input:
             <br>
-            str = "hello"
+            s1 = "hello"
+            s2 = "elloh"
+            
             <br>
-            Output: "olleh"
+            Output: "yes"
 
             <br>
             Example 2:
             <br>
             Input:
             <br>
-            str = "world"
+            s1 = "world"
+            s2 = "elloh"
+            
             <br>
-            Output: "dlrow"
+            Output: "No"
             <br>
         </p>
     </div>
     <div class="alllines">
         <h4>Steps to solve:-</h4>
         <p>
-
-            <mark>1. Input Reading:-</mark>
-
-            The program starts by declaring a string variable str.
-            It uses cin to read a string input from the user and stores it in the str variable. The user enters a
-            string, and that string becomes the value of str.
+            <mark>1. areAnagram Function:- </mark>The areAnagram function takes two input strings, s1 and s2, as
+            parameters. <br>
+            It calculates the lengths of both strings (n1 and n2) and checks if they have the same length. If the
+            lengths are different, the function returns false because they cannot be anagrams.<br>
+            Both strings are sorted using the sort function, which rearranges the characters in ascending order.<br>
+            It then iterates through both sorted strings and compares each character at the same position. If any
+            character differs, the function returns false.<br>
+            If all characters match, the function returns true, indicating that the input strings are anagrams.
             <br>
-            <mark>2. String Length Calculation:-</mark>
+            <mark>2. main function:-</mark>The main function reads two strings, s1 and s2, from the user. <br>
+            It calls the areAnagram function to check if the two input strings are anagrams.<br>
+            If the function returns true, it prints "Yes" to indicate that they are anagrams. Otherwise,
+             it prints "No" to indicate that they are not anagrams.<br>
 
-            After reading the input string, the code calculates the length of the string using the length() function and
-            stores it in the integer variable n. This step is necessary to determine the length of the string, which is
-            needed for iterating over its characters.
-            <br>
-            <mark>3. Reversing the String:-</mark>
 
-            The code enters a while loop with the condition i < j, where i starts at 0 and j starts at n - 1. These two
-                pointers (i and j) are used to swap characters in the string to reverse it. Inside the loop, the swap
-                function is used to swap the characters at positions i and j in the string str. This effectively
-                reverses the characters at these positions. After the swap, i is incremented by 1, and j is decremented
-                by 1, bringing the pointers closer to each other for the next iteration. <br>
 
-                <mark>4. Exiting the Loop:-</mark> The loop continues until i is no longer less than j. When i becomes
-                equal to or greater than j, the loop exits
-                because there are no more characters to swap. 
-                <br>
-                <mark>5. Printing the Reversed String:-</mark>Finally, the code prints the
-                reversed string using cout.
         </p>
     </div>
 
@@ -184,12 +177,12 @@
 
     <div class="secondpara">
         <h4>solution-></h4>
-        <a href="https://ide.geeksforgeeks.org/online-cpp14-compiler/67528048-7372-469e-a324-9792b47f42ca"
+        <a href="https://ide.geeksforgeeks.org/online-cpp14-compiler/57842163-757f-4fc8-b31a-cce43ad6bf5b"
             target="_blank">View Code 1</a>
         <br>
-        Time Complexity = O(n)
+        Time Complexity =  O(n * log(n))
         <br>
-        Space Complexity = O(1)
+        Space Complexity = O(n1 + n2)
     </div>
 </body>
 

@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>11: Reverse a string.</title>
+    <title>25: Implement a stack using an array or linked list.</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous" />
 
@@ -113,7 +113,7 @@
 <body>
 
 
-    <h1 class="hone">11: Reverse a string.
+    <h1 class="hone">25: Implement a stack using an array or linked list.
         <div class="stopwatch">
             <span>⏳⌚</span>
             <span id="display">00:00:00</span>
@@ -125,57 +125,68 @@
     <div class="alllines2">
         <h4>Question:-</h4>
         <p>
-            Reverse a string.
+            Implement a stack using an array or linked list.
             <br>
             Example 1:
             <br>
             Input:
-            <br>
-            str = "hello"
-            <br>
-            Output: "olleh"
+            according to question:
+            Output:<br>
+            44 -> 33 -> 22 -> 11 <br>
+            Top element is 44<br>
+            22 -> 11<br>
+            Top element is 22<br>
 
-            <br>
-            Example 2:
-            <br>
-            Input:
-            <br>
-            str = "world"
-            <br>
-            Output: "dlrow"
+            
             <br>
         </p>
     </div>
     <div class="alllines">
         <h4>Steps to solve:-</h4>
         <p>
+            <mark>1. Node class:-</mark> br
+            The code defines a Node class, which represents a single element in the linked list. Each Node has two
+            attributes: data (to store the value of the element) and link (a pointer to the next Node in the list). The
+            Node class has a constructor that initializes these attributes. <br>
+            <mark>2. stack calss:-</mark> <br>
+            The code also defines a Stack class, which represents the stack data structure. It has a private member
+            variable top, which is a pointer to the top element in the stack. Initially, top is set to NULL to indicate
+            an empty stack. <br>
 
-            <mark>1. Input Reading:-</mark>
+            <mark>3. Operations in stack:-</mark>
+            The Stack class provides several methods to manipulate the stack: <br>
 
-            The program starts by declaring a string variable str.
-            It uses cin to read a string input from the user and stores it in the str variable. The user enters a
-            string, and that string becomes the value of str.
-            <br>
-            <mark>2. String Length Calculation:-</mark>
+            **push(int data): This method is used to push an element onto the stack. It creates a new Node with the
+            given
+            data, checks for stack overflow, and inserts the new node at the top of the stack.<br>
 
-            After reading the input string, the code calculates the length of the string using the length() function and
-            stores it in the integer variable n. This step is necessary to determine the length of the string, which is
-            needed for iterating over its characters.
-            <br>
-            <mark>3. Reversing the String:-</mark>
+            **pop(): This method removes the top element from the stack. It checks for stack underflow and deletes the
+            top
+            node.<br>
 
-            The code enters a while loop with the condition i < j, where i starts at 0 and j starts at n - 1. These two
-                pointers (i and j) are used to swap characters in the string to reverse it. Inside the loop, the swap
-                function is used to swap the characters at positions i and j in the string str. This effectively
-                reverses the characters at these positions. After the swap, i is incremented by 1, and j is decremented
-                by 1, bringing the pointers closer to each other for the next iteration. <br>
+            **isEmpty(): This method checks if the stack is empty by examining whether top is NULL.<br>
 
-                <mark>4. Exiting the Loop:-</mark> The loop continues until i is no longer less than j. When i becomes
-                equal to or greater than j, the loop exits
-                because there are no more characters to swap. 
-                <br>
-                <mark>5. Printing the Reversed String:-</mark>Finally, the code prints the
-                reversed string using cout.
+            **peek(): This method returns the value of the top element in the stack without removing it. It checks if
+            the
+            stack is empty and returns the top element's data if it's not empty.<br>
+
+            **display(): This method is used to print all the elements of the stack. It traverses the linked list,
+            starting from top, and prints the data values of each element.<br>
+
+
+            <mark>4. main function:- </mark><br>
+            In the main function, an instance of the Stack class is created as s. <br>
+
+            Several elements (11, 22, 33, 44) are pushed onto the stack using the push method.<br>
+
+            The elements in the stack are displayed using the display method, and the top element is printed using the
+            peek method.<br>
+
+            Two elements are popped from the stack using the pop method.<br>
+
+            The remaining elements in the stack are displayed again, and the top element is printed.<br>
+
+
         </p>
     </div>
 
@@ -184,12 +195,12 @@
 
     <div class="secondpara">
         <h4>solution-></h4>
-        <a href="https://ide.geeksforgeeks.org/online-cpp14-compiler/67528048-7372-469e-a324-9792b47f42ca"
+        <a href="https://ide.geeksforgeeks.org/online-cpp14-compiler/02cb84e8-1653-4a9b-9d74-59020e4a9b25"
             target="_blank">View Code 1</a>
         <br>
         Time Complexity = O(n)
         <br>
-        Space Complexity = O(1)
+        Space Complexity = O(n)
     </div>
 </body>
 

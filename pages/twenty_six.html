@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>11: Reverse a string.</title>
+    <title>26: Implement a queue using an array or linked list. </title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous" />
 
@@ -113,7 +113,7 @@
 <body>
 
 
-    <h1 class="hone">11: Reverse a string.
+    <h1 class="hone">26: Implement a queue using an array or linked list.
         <div class="stopwatch">
             <span>⏳⌚</span>
             <span id="display">00:00:00</span>
@@ -125,24 +125,15 @@
     <div class="alllines2">
         <h4>Question:-</h4>
         <p>
-            Reverse a string.
+            Implement a queue using an array or linked list.
             <br>
             Example 1:
             <br>
             Input:
-            <br>
-            str = "hello"
-            <br>
-            Output: "olleh"
-
-            <br>
-            Example 2:
-            <br>
-            Input:
-            <br>
-            str = "world"
-            <br>
-            Output: "dlrow"
+            according to question <br>
+            Output:<br>
+            Queue Front : 40 <br>
+            Queue Rear : 50
             <br>
         </p>
     </div>
@@ -150,32 +141,28 @@
         <h4>Steps to solve:-</h4>
         <p>
 
-            <mark>1. Input Reading:-</mark>
+            <mark> 1. struct QNode:-</mark>  <br> This structure defines the individual nodes that will make up the linked list. Each node
+            contains an integer value (data) and a pointer to the next node (next).<br>
 
-            The program starts by declaring a string variable str.
-            It uses cin to read a string input from the user and stores it in the str variable. The user enters a
-            string, and that string becomes the value of str.
-            <br>
-            <mark>2. String Length Calculation:-</mark>
+            <mark>2. struct Queue:-</mark> <br>This structure represents the queue itself and contains two pointers, front and rear, which
+            point to the front and rear nodes of the queue, respectively. Initially, both front and rear are set to
+            NULL, indicating an empty queue.<br>
 
-            After reading the input string, the code calculates the length of the string using the length() function and
-            stores it in the integer variable n. This step is necessary to determine the length of the string, which is
-            needed for iterating over its characters.
-            <br>
-            <mark>3. Reversing the String:-</mark>
+            <mark>3. enQueue(int x):-</mark> <br>This method is used to add an element to the rear of the queue. It creates a new node with
+            the provided integer value x and adds it to the rear of the queue by updating the rear pointer. If the queue
+            is empty, it also updates the front pointer.<br>
 
-            The code enters a while loop with the condition i < j, where i starts at 0 and j starts at n - 1. These two
-                pointers (i and j) are used to swap characters in the string to reverse it. Inside the loop, the swap
-                function is used to swap the characters at positions i and j in the string str. This effectively
-                reverses the characters at these positions. After the swap, i is incremented by 1, and j is decremented
-                by 1, bringing the pointers closer to each other for the next iteration. <br>
+            <mark>4. deQueue():-</mark> <br>This method is used to remove an element from the front of the queue. It checks if the queue is
+            empty (when front is NULL) and returns if it is. Otherwise, it moves the front pointer to the next node and
+            deletes the previous front node. If the front node becomes NULL after this operation (indicating that the
+            queue is now empty), it updates the rear pointer as well.<br>
 
-                <mark>4. Exiting the Loop:-</mark> The loop continues until i is no longer less than j. When i becomes
-                equal to or greater than j, the loop exits
-                because there are no more characters to swap. 
-                <br>
-                <mark>5. Printing the Reversed String:-</mark>Finally, the code prints the
-                reversed string using cout.
+            <mark>5. main():-</mark><br> In the main function, an instance of the Queue data structure, q, is created. Elements are then
+            added to the queue using enQueue and removed using deQueue. The program prints the front and rear elements
+            of the queue at the end of its execution.<br>
+
+
+
         </p>
     </div>
 
@@ -184,12 +171,12 @@
 
     <div class="secondpara">
         <h4>solution-></h4>
-        <a href="https://ide.geeksforgeeks.org/online-cpp14-compiler/67528048-7372-469e-a324-9792b47f42ca"
+        <a href="https://ide.geeksforgeeks.org/online-cpp14-compiler/3d6ce748-2976-45d8-b272-e9075c46d9f7"
             target="_blank">View Code 1</a>
         <br>
-        Time Complexity = O(n)
+        Time Complexity = O(1)
         <br>
-        Space Complexity = O(1)
+        Space Complexity = O(n)
     </div>
 </body>
 

@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>11: Reverse a string.</title>
+    <title>14: Count the occurrences of a character in a string. </title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous" />
 
@@ -113,7 +113,7 @@
 <body>
 
 
-    <h1 class="hone">11: Reverse a string.
+    <h1 class="hone">14: Count the occurrences of a character in a string.
         <div class="stopwatch">
             <span>⏳⌚</span>
             <span id="display">00:00:00</span>
@@ -125,57 +125,50 @@
     <div class="alllines2">
         <h4>Question:-</h4>
         <p>
-            Reverse a string.
+            Count the occurrences of a character in a string.
             <br>
             Example 1:
             <br>
             Input:
             <br>
-            str = "hello"
+            s = "hello"
             <br>
-            Output: "olleh"
+            c = 'l'
+            <br>
+            Output: "2"
 
             <br>
             Example 2:
             <br>
             Input:
             <br>
-            str = "world"
+            s = "geeksforgeeks"
             <br>
-            Output: "dlrow"
+            c = 'e'
+            <br>
+            Output: "4"
             <br>
         </p>
     </div>
     <div class="alllines">
         <h4>Steps to solve:-</h4>
         <p>
-
-            <mark>1. Input Reading:-</mark>
-
-            The program starts by declaring a string variable str.
-            It uses cin to read a string input from the user and stores it in the str variable. The user enters a
-            string, and that string becomes the value of str.
-            <br>
-            <mark>2. String Length Calculation:-</mark>
-
-            After reading the input string, the code calculates the length of the string using the length() function and
-            stores it in the integer variable n. This step is necessary to determine the length of the string, which is
-            needed for iterating over its characters.
-            <br>
-            <mark>3. Reversing the String:-</mark>
-
-            The code enters a while loop with the condition i < j, where i starts at 0 and j starts at n - 1. These two
-                pointers (i and j) are used to swap characters in the string to reverse it. Inside the loop, the swap
-                function is used to swap the characters at positions i and j in the string str. This effectively
-                reverses the characters at these positions. After the swap, i is incremented by 1, and j is decremented
-                by 1, bringing the pointers closer to each other for the next iteration. <br>
-
-                <mark>4. Exiting the Loop:-</mark> The loop continues until i is no longer less than j. When i becomes
-                equal to or greater than j, the loop exits
-                because there are no more characters to swap. 
+            <mark>1. Count Function:- </mark>count is a user-defined function that takes two parameters: s (a string) and c (a character).
+                It initializes an integer variable res to store the count of occurrences and sets it to 0.
+                A for loop is used to iterate through the characters of the input string s. It starts from i = 0 and continues until i reaches the length of the string.
+                Inside the loop, it checks if the character at index i in the string s is equal to the target character c. If they match, it increments the res variable by 1.
+                After processing all characters in the string, the function returns the final count stored in res.
                 <br>
-                <mark>5. Printing the Reversed String:-</mark>Finally, the code prints the
-                reversed string using cout.
+            <mark>2. main function:-</mark>The main function is the entry point of the program. <br>
+            It declares a string variable str to store the input string.<br>
+            It uses cin to read a string input from the user and assigns it to the str variable.<br>
+            It declares a character variable c to store the character to be counted.<br>
+            It uses cin again to read a character input from the user and assigns it to the c variable.<br>
+            It then calls the count function with the input string str and character c and prints the result (the count of occurrences) to the standard output using cout.<br>
+            Finally, it returns 0, indicating successful program execution.<br>
+            
+
+
         </p>
     </div>
 
@@ -184,12 +177,12 @@
 
     <div class="secondpara">
         <h4>solution-></h4>
-        <a href="https://ide.geeksforgeeks.org/online-cpp14-compiler/67528048-7372-469e-a324-9792b47f42ca"
+        <a href="https://ide.geeksforgeeks.org/online-cpp14-compiler/6246087a-8f72-45a8-b41d-41cd772c8fb0"
             target="_blank">View Code 1</a>
         <br>
         Time Complexity = O(n)
         <br>
-        Space Complexity = O(1)
+        Space Complexity = O(n)
     </div>
 </body>
 

@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>11: Reverse a string.</title>
+    <title>23: Remove duplicates from a sorted linked list. </title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous" />
 
@@ -113,7 +113,7 @@
 <body>
 
 
-    <h1 class="hone">11: Reverse a string.
+    <h1 class="hone">23: Remove duplicates from a sorted linked list.
         <div class="stopwatch">
             <span>⏳⌚</span>
             <span id="display">00:00:00</span>
@@ -125,57 +125,69 @@
     <div class="alllines2">
         <h4>Question:-</h4>
         <p>
-            Reverse a string.
+            Remove duplicates from a sorted linked list.
             <br>
             Example 1:
             <br>
             Input:
+            11->11->11->21->43->43->60
+
             <br>
-            str = "hello"
-            <br>
-            Output: "olleh"
+            Output: 11->21->43->60. 
 
             <br>
             Example 2:
             <br>
-            Input:
+            Input: 11->11->11->11->21->43->43->60
+
+
             <br>
-            str = "world"
-            <br>
-            Output: "dlrow"
+            Output: 11->21->43->60. 
             <br>
         </p>
     </div>
     <div class="alllines">
         <h4>Steps to solve:-</h4>
         <p>
+            <mark>1. class Node-:</mark> <br>
+            It defines a class Node to represent the nodes of the linked list. Each node contains an integer data and a
+            pointer next to the next node. <br>
 
-            <mark>1. Input Reading:-</mark>
 
-            The program starts by declaring a string variable str.
-            It uses cin to read a string input from the user and stores it in the str variable. The user enters a
-            string, and that string becomes the value of str.
-            <br>
-            <mark>2. String Length Calculation:-</mark>
+            <mark>2. remove Duplicates function:- </mark> <br>
+            The removeDuplicates function is used to remove duplicates from the sorted linked list. It takes the head of
+            the linked list as an argument. <br>
 
-            After reading the input string, the code calculates the length of the string using the length() function and
-            stores it in the integer variable n. This step is necessary to determine the length of the string, which is
-            needed for iterating over its characters.
-            <br>
-            <mark>3. Reversing the String:-</mark>
+            <mark>3. Inside the removeDuplicates function:-</mark> <br>
+            It starts with a pointer current initialized to the head of the list and a pointer next_next to store the
+            next pointer of a node to be deleted. <br>
+            If the list is empty (i.e., current is NULL), it does nothing and returns.
+            It then traverses the list using a while loop until the end of the list is reached.
+            Within the loop, it compares the data of the current node with the data of the next node. If they are equal,
+            it proceeds to remove the duplicate:
+            It stores the next pointer of the node to be deleted in next_next.
+            It frees the memory of the next node using free.
+            It updates the next pointer of the current node to point to next_next.
+            If the data of the current node and the next node are not equal, it simply advances the current pointer to
+            the next node.
+            The push function is a utility function used to insert a new node at the beginning of the linked list. It
+            takes a reference to the head of the linked list and the data for the new node as arguments.
 
-            The code enters a while loop with the condition i < j, where i starts at 0 and j starts at n - 1. These two
-                pointers (i and j) are used to swap characters in the string to reverse it. Inside the loop, the swap
-                function is used to swap the characters at positions i and j in the string str. This effectively
-                reverses the characters at these positions. After the swap, i is incremented by 1, and j is decremented
-                by 1, bringing the pointers closer to each other for the next iteration. <br>
+            The printList function is a utility function used to print the elements of the linked list. <br>
 
-                <mark>4. Exiting the Loop:-</mark> The loop continues until i is no longer less than j. When i becomes
-                equal to or greater than j, the loop exits
-                because there are no more characters to swap. 
-                <br>
-                <mark>5. Printing the Reversed String:-</mark>Finally, the code prints the
-                reversed string using cout.
+            <mark>4. In the main function:-</mark>
+
+            It creates an empty linked list head. <br>
+            It uses the push function to insert elements into the linked list in sorted order. <br>
+            It prints the original linked list before removing duplicates.<br>
+            It calls the removeDuplicates function to remove duplicates.<br>
+            It prints the modified linked list after removing duplicates.<br>
+
+
+
+
+
+
         </p>
     </div>
 
@@ -184,7 +196,7 @@
 
     <div class="secondpara">
         <h4>solution-></h4>
-        <a href="https://ide.geeksforgeeks.org/online-cpp14-compiler/67528048-7372-469e-a324-9792b47f42ca"
+        <a href="https://ide.geeksforgeeks.org/online-cpp14-compiler/aeb19898-9968-4684-8d2d-1651d9fe75f4"
             target="_blank">View Code 1</a>
         <br>
         Time Complexity = O(n)

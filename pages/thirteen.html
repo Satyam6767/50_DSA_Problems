@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>11: Reverse a string.</title>
+    <title>13: Find the longest substring without repeating characters. </title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous" />
 
@@ -113,7 +113,7 @@
 <body>
 
 
-    <h1 class="hone">11: Reverse a string.
+    <h1 class="hone">13: Find the longest substring without repeating characters.
         <div class="stopwatch">
             <span>⏳⌚</span>
             <span id="display">00:00:00</span>
@@ -125,7 +125,7 @@
     <div class="alllines2">
         <h4>Question:-</h4>
         <p>
-            Reverse a string.
+            Find the longest substring without repeating characters.
             <br>
             Example 1:
             <br>
@@ -133,49 +133,62 @@
             <br>
             str = "hello"
             <br>
-            Output: "olleh"
+            Output: "hel"
 
             <br>
             Example 2:
             <br>
             Input:
             <br>
-            str = "world"
+            str = "geeksforgeeks"
             <br>
-            Output: "dlrow"
+            Output: "eksforg"
             <br>
         </p>
     </div>
     <div class="alllines">
         <h4>Steps to solve:-</h4>
         <p>
+            <mark>1. Data Structures Used:- </mark>unordered_map char, int charIndex: An unordered map is used to store
+            the index at which each character was
+            last encountered in the input string. This map helps keep track of characters and their positions within
+            the string.
 
-            <mark>1. Input Reading:-</mark>
-
-            The program starts by declaring a string variable str.
-            It uses cin to read a string input from the user and stores it in the str variable. The user enters a
-            string, and that string becomes the value of str.
             <br>
-            <mark>2. String Length Calculation:-</mark>
-
-            After reading the input string, the code calculates the length of the string using the length() function and
-            stores it in the integer variable n. This step is necessary to determine the length of the string, which is
-            needed for iterating over its characters.
+            <mark>2. Variables Initialization:-</mark><br>
+            maxLength: This variable keeps track of the length of the longest substring found without repeating
+            characters. <br>
+            startIndex: It represents the starting index of the current substring being examined. <br>
+            maxStartIndex: This variable stores the starting index of the longest substring found so far. <br>
+            <mark>3. Looping Through the Input String:-</mark>
+            The code uses a for loop to iterate through each character in the input string s. The variable endIndex
+            represents the index of the current character being examined. <br>
+            
+            <mark>4. Character Handling:-</mark>
+            For each character c encountered in the input string:
+            If the character c is already present in the charIndex map (i.e., charIndex.find(c) != charIndex.end()),
+            and its index (charIndex[c]) is greater than or equal to the startIndex, it means that the character c
+            has been encountered within the current substring. To avoid repeating characters, the startIndex is
+            updated to the next index after the last occurrence of c.
+            The index of the character c is updated in the charIndex map, indicating the most recent occurrence. <br>
+            <mark>5. Calculating Substring Length:-</mark>
+            After each character is processed, the code calculates the length of the current substring without
+            repeating characters (currentLength) as the difference between endIndex and startIndex plus 1. <br>
+            <mark>6. Updating Longest Substring:-</mark>
+            If the currentLength is greater than the maxLength, the maxLength is updated to currentLength, and the
+            maxStartIndex is updated to the current startIndex. This step ensures that we keep track of the longest
+            substring found so far.
             <br>
-            <mark>3. Reversing the String:-</mark>
+            <mark>7. Returning the Result:-</mark>
+            Finally, the code returns the longest substring without repeating characters by extracting it from the
+            input string s using the substr function with the maxStartIndex and maxLength. <br>
+            <mark>8. Main Function:-</mark>
 
-            The code enters a while loop with the condition i < j, where i starts at 0 and j starts at n - 1. These two
-                pointers (i and j) are used to swap characters in the string to reverse it. Inside the loop, the swap
-                function is used to swap the characters at positions i and j in the string str. This effectively
-                reverses the characters at these positions. After the swap, i is incremented by 1, and j is decremented
-                by 1, bringing the pointers closer to each other for the next iteration. <br>
+            In the main function, the user is prompted to enter a string, which is then passed to the
+            longestSubstring function. The result is printed, showing the longest substring without repeating
+            characters.
 
-                <mark>4. Exiting the Loop:-</mark> The loop continues until i is no longer less than j. When i becomes
-                equal to or greater than j, the loop exits
-                because there are no more characters to swap. 
-                <br>
-                <mark>5. Printing the Reversed String:-</mark>Finally, the code prints the
-                reversed string using cout.
+
         </p>
     </div>
 
@@ -184,7 +197,7 @@
 
     <div class="secondpara">
         <h4>solution-></h4>
-        <a href="https://ide.geeksforgeeks.org/online-cpp14-compiler/67528048-7372-469e-a324-9792b47f42ca"
+        <a href="https://ide.geeksforgeeks.org/online-cpp14-compiler/7dfd0109-dbd2-4c23-87a8-412bd479b539"
             target="_blank">View Code 1</a>
         <br>
         Time Complexity = O(n)

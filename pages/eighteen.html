@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>11: Reverse a string.</title>
+    <title>18: Implement a singly linked list. </title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous" />
 
@@ -113,7 +113,7 @@
 <body>
 
 
-    <h1 class="hone">11: Reverse a string.
+    <h1 class="hone">18: Implement a singly linked list.
         <div class="stopwatch">
             <span>⏳⌚</span>
             <span id="display">00:00:00</span>
@@ -125,57 +125,58 @@
     <div class="alllines2">
         <h4>Question:-</h4>
         <p>
-            Reverse a string.
+            Implement a singly linked list.
             <br>
             Example 1:
             <br>
             Input:
+            10 20 30 40
+
             <br>
-            str = "hello"
-            <br>
-            Output: "olleh"
+            Output: 10->20->30->40
 
             <br>
             Example 2:
             <br>
             Input:
+            10 20 30 40 50
+
+
             <br>
-            str = "world"
-            <br>
-            Output: "dlrow"
+            Output: 10->20->30->40->50
             <br>
         </p>
     </div>
     <div class="alllines">
         <h4>Steps to solve:-</h4>
         <p>
+            <mark>1. Node Structure:-</mark> <br>
 
-            <mark>1. Input Reading:-</mark>
+            A Node structure is defined to represent individual elements of the singly linked list. <br>
+            Each node contains two components: an integer data and a pointer next. <br>
+            The data component stores the value of the node. <br>
+            The next component is a pointer to the next node in the list. <br>
+            <mark1>2. Main Function:- </mark1> <br>
 
-            The program starts by declaring a string variable str.
-            It uses cin to read a string input from the user and stores it in the str variable. The user enters a
-            string, and that string becomes the value of str.
-            <br>
-            <mark>2. String Length Calculation:-</mark>
+            Inside the main function, the code starts by creating four nodes: head, temp, temp1, and temp2. <br>
+            Each node is created using the Node constructor, and an initial value is assigned to the data component. For
+            example, head is created with a data value of 10, temp with 20, temp1 with 30, and temp2 with 40. <br>
+            <mark>3. Linking Nodes:-</mark> <br>
+            The code then establishes the links between these nodes to create a singly linked list. <br>
+            head->next is set to point to temp, which means that head is linked to temp. <br>
+            temp->next is set to point to temp1, linking temp to temp1. <br>
+            Similarly, temp1->next is set to point to temp2, linking temp1 to temp2. <br>
+            <mark>4. Print the Data:-</mark> <br>
 
-            After reading the input string, the code calculates the length of the string using the length() function and
-            stores it in the integer variable n. This step is necessary to determine the length of the string, which is
-            needed for iterating over its characters.
-            <br>
-            <mark>3. Reversing the String:-</mark>
+            After creating and linking the nodes, the code prints the data of each node to the standard output using
+            cout. <br>
+            The data values of head, temp, temp1, and temp2 are displayed, separated by spaces. <br>
+            <mark>5. Return Statement:- </mark> <br>
 
-            The code enters a while loop with the condition i < j, where i starts at 0 and j starts at n - 1. These two
-                pointers (i and j) are used to swap characters in the string to reverse it. Inside the loop, the swap
-                function is used to swap the characters at positions i and j in the string str. This effectively
-                reverses the characters at these positions. After the swap, i is incremented by 1, and j is decremented
-                by 1, bringing the pointers closer to each other for the next iteration. <br>
+            Finally, the main function returns 0, indicating successful execution.
 
-                <mark>4. Exiting the Loop:-</mark> The loop continues until i is no longer less than j. When i becomes
-                equal to or greater than j, the loop exits
-                because there are no more characters to swap. 
-                <br>
-                <mark>5. Printing the Reversed String:-</mark>Finally, the code prints the
-                reversed string using cout.
+
+
         </p>
     </div>
 
@@ -184,10 +185,10 @@
 
     <div class="secondpara">
         <h4>solution-></h4>
-        <a href="https://ide.geeksforgeeks.org/online-cpp14-compiler/67528048-7372-469e-a324-9792b47f42ca"
+        <a href="https://ide.geeksforgeeks.org/online-cpp14-compiler/eeb0b324-dce0-4ecd-b536-04e67ad6f976"
             target="_blank">View Code 1</a>
         <br>
-        Time Complexity = O(n)
+        Time Complexity = O(1)
         <br>
         Space Complexity = O(1)
     </div>

@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>11: Reverse a string.</title>
+    <title>19: Reverse a linked list. </title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous" />
 
@@ -113,7 +113,7 @@
 <body>
 
 
-    <h1 class="hone">11: Reverse a string.
+    <h1 class="hone">19: Reverse a linked list.
         <div class="stopwatch">
             <span>⏳⌚</span>
             <span id="display">00:00:00</span>
@@ -125,57 +125,60 @@
     <div class="alllines2">
         <h4>Question:-</h4>
         <p>
-            Reverse a string.
+            Reverse a linked list.
             <br>
             Example 1:
             <br>
             Input:
+            10 20 30 40
+
             <br>
-            str = "hello"
-            <br>
-            Output: "olleh"
+            Output: 40->30->20->10
 
             <br>
             Example 2:
             <br>
             Input:
+            10 20 30 40 50
+
+
             <br>
-            str = "world"
-            <br>
-            Output: "dlrow"
+            Output: 50->40->30->20->10
             <br>
         </p>
     </div>
     <div class="alllines">
         <h4>Steps to solve:-</h4>
         <p>
-
-            <mark>1. Input Reading:-</mark>
-
-            The program starts by declaring a string variable str.
-            It uses cin to read a string input from the user and stores it in the str variable. The user enters a
-            string, and that string becomes the value of str.
+            <mark>1. Node Structure:-</mark>
             <br>
-            <mark>2. String Length Calculation:-</mark>
 
-            After reading the input string, the code calculates the length of the string using the length() function and
-            stores it in the integer variable n. This step is necessary to determine the length of the string, which is
-            needed for iterating over its characters.
-            <br>
-            <mark>3. Reversing the String:-</mark>
+            The code defines a struct Node to represent individual elements of the singly linked list. <br>
+            Each node contains two components: an integer data and a pointer next. <br>
+            The data component stores the value of the node. <br>
+            The next component is a pointer to the next node in the list. <br>
+            <mark>2. Reverse Linked List Function:-</mark> <br>
 
-            The code enters a while loop with the condition i < j, where i starts at 0 and j starts at n - 1. These two
-                pointers (i and j) are used to swap characters in the string to reverse it. Inside the loop, the swap
-                function is used to swap the characters at positions i and j in the string str. This effectively
-                reverses the characters at these positions. After the swap, i is incremented by 1, and j is decremented
-                by 1, bringing the pointers closer to each other for the next iteration. <br>
+            The reverseLinkedList function takes the head of a linked list as input and returns the head of the reversed
+            linked list.<br>
+            Inside the function, three pointers are used: prev, current, and next.<br>
+            A prev pointer is initialized to nullptr to serve as the previous node of the current node.<br>
+            The current pointer is initialized to the head of the original linked list.<br>
+            A next pointer is used to store the next node in the original linked list temporarily.<br>
+            The function iterates through the linked list and reverses the direction of the pointers to change the order
+            of the nodes.<br>
+            <mark>3. Main Function:- </mark> <br>
+            Inside the main function, a linked list is created with nodes containing values 10, 20, 30, and 40.
+            The linked list is connected by setting the next pointers. <br>
+            The reverseLinkedList function is called to reverse the linked list, and the returned head is assigned to
+            head. <br>
+            The reversed linked list is then printed by iterating through it. <br>
+            <mark>4. Output:-</mark> <br>
+            The program prints the reversed linked list in the form of a sequence of values separated by "->" (e.g.,
+            "40->30->20->10").
 
-                <mark>4. Exiting the Loop:-</mark> The loop continues until i is no longer less than j. When i becomes
-                equal to or greater than j, the loop exits
-                because there are no more characters to swap. 
-                <br>
-                <mark>5. Printing the Reversed String:-</mark>Finally, the code prints the
-                reversed string using cout.
+
+
         </p>
     </div>
 
@@ -184,7 +187,7 @@
 
     <div class="secondpara">
         <h4>solution-></h4>
-        <a href="https://ide.geeksforgeeks.org/online-cpp14-compiler/67528048-7372-469e-a324-9792b47f42ca"
+        <a href="https://ide.geeksforgeeks.org/online-cpp14-compiler/35451ca9-e601-4c8c-99d5-0dcfe64c495f"
             target="_blank">View Code 1</a>
         <br>
         Time Complexity = O(n)

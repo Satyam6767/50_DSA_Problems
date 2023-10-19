@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>11: Reverse a string.</title>
+    <title>12: Check if a string is a palindrome.</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous" />
 
@@ -113,7 +113,7 @@
 <body>
 
 
-    <h1 class="hone">11: Reverse a string.
+    <h1 class="hone">12: Check if a string is a palindrome.
         <div class="stopwatch">
             <span>⏳⌚</span>
             <span id="display">00:00:00</span>
@@ -125,15 +125,15 @@
     <div class="alllines2">
         <h4>Question:-</h4>
         <p>
-            Reverse a string.
+            Check if a string is a palindrome.
             <br>
             Example 1:
             <br>
             Input:
             <br>
-            str = "hello"
+            str = "madam"
             <br>
-            Output: "olleh"
+            Output: "yes"
 
             <br>
             Example 2:
@@ -142,40 +142,29 @@
             <br>
             str = "world"
             <br>
-            Output: "dlrow"
+            Output: "no"
             <br>
         </p>
     </div>
     <div class="alllines">
         <h4>Steps to solve:-</h4>
         <p>
-
-            <mark>1. Input Reading:-</mark>
-
-            The program starts by declaring a string variable str.
-            It uses cin to read a string input from the user and stores it in the str variable. The user enters a
-            string, and that string becomes the value of str.
+            <mark>1. Input:- </mark> take a string input from user.
             <br>
-            <mark>2. String Length Calculation:-</mark>
-
-            After reading the input string, the code calculates the length of the string using the length() function and
-            stores it in the integer variable n. This step is necessary to determine the length of the string, which is
-            needed for iterating over its characters.
+            <mark>2. size of string:- </mark> we find string size by int n = str.length(). <br>
+            <mark>3. declare a bool variavbe:- </mark> <br>
+            We start with a boolean variable isPalindrome initialized to true.
             <br>
-            <mark>3. Reversing the String:-</mark>
+            <mark>4. outer loop</mark>
+            Inside the for loop, we compare characters from both ends of the string (str[i] and str[j]) and set
+            isPalindrome to false if they don't match. We also break out of the loop early since we've already
+            determined that the string is not a palindrome.
+            <br>
+            <mark>5. final:-</mark>
+            After the loop, we use an if statement to check the value of isPalindrome. If it's true, we print that the
+            string is a palindrome; otherwise, we print that it's not a palindrome.
 
-            The code enters a while loop with the condition i < j, where i starts at 0 and j starts at n - 1. These two
-                pointers (i and j) are used to swap characters in the string to reverse it. Inside the loop, the swap
-                function is used to swap the characters at positions i and j in the string str. This effectively
-                reverses the characters at these positions. After the swap, i is incremented by 1, and j is decremented
-                by 1, bringing the pointers closer to each other for the next iteration. <br>
 
-                <mark>4. Exiting the Loop:-</mark> The loop continues until i is no longer less than j. When i becomes
-                equal to or greater than j, the loop exits
-                because there are no more characters to swap. 
-                <br>
-                <mark>5. Printing the Reversed String:-</mark>Finally, the code prints the
-                reversed string using cout.
         </p>
     </div>
 
@@ -184,7 +173,7 @@
 
     <div class="secondpara">
         <h4>solution-></h4>
-        <a href="https://ide.geeksforgeeks.org/online-cpp14-compiler/67528048-7372-469e-a324-9792b47f42ca"
+        <a href="https://ide.geeksforgeeks.org/online-cpp14-compiler/63b29666-b1ab-4f05-8565-28b1e609c5a7"
             target="_blank">View Code 1</a>
         <br>
         Time Complexity = O(n)

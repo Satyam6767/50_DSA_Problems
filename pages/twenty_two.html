@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>11: Reverse a string.</title>
+    <title>22: Merge two sorted linked lists. </title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous" />
 
@@ -113,7 +113,7 @@
 <body>
 
 
-    <h1 class="hone">11: Reverse a string.
+    <h1 class="hone">22: Merge two sorted linked lists.
         <div class="stopwatch">
             <span>⏳⌚</span>
             <span id="display">00:00:00</span>
@@ -125,24 +125,24 @@
     <div class="alllines2">
         <h4>Question:-</h4>
         <p>
-            Reverse a string.
+            Merge two sorted linked lists.
             <br>
             Example 1:
             <br>
             Input:
+            a: 5->10->15, b: 2->3->20
+
             <br>
-            str = "hello"
-            <br>
-            Output: "olleh"
+            Output: 2->3->5->10->15->20
 
             <br>
             Example 2:
             <br>
-            Input:
+            Input: a: 1->1, b: 2->4
+
+
             <br>
-            str = "world"
-            <br>
-            Output: "dlrow"
+            Output: 1->1->2->4
             <br>
         </p>
     </div>
@@ -150,32 +150,43 @@
         <h4>Steps to solve:-</h4>
         <p>
 
-            <mark>1. Input Reading:-</mark>
+            <mark>1. Structure Node:- </mark> <br>
+            First, a structure Node is defined to represent linked list nodes. Each node has an integer key and a
+            pointer to the next node.
 
-            The program starts by declaring a string variable str.
-            It uses cin to read a string input from the user and stores it in the str variable. The user enters a
-            string, and that string becomes the value of str.
+
+            <mark>2. Function newNode:- </mark>
+            A function newNode(int key) is defined to create a new node with the given key value. It allocates memory
+            for the new node, sets the key, and initializes the next pointer to NULL. <br>
+
+            <mark>3. Function newNode:- </mark>
+            In the main function, two sorted linked lists a and b are created. These linked lists are as follows:
+            List a: 5 -> 10 -> 15 -> 40
+            List b: 2 -> 3 -> 20 
+
             <br>
-            <mark>2. String Length Calculation:-</mark>
+            A vector v is declared to store the keys from both linked lists. This is done using two while loops:
+            The first loop iterates over list a and appends its keys to the vector v.
+            The second loop iterates over list b and appends its keys to the same vector v.
+            The vector v is then sorted in ascending order using the sort function from the C++ Standard Library.
+            <mark>4. merged sort:-</mark>
+            A new linked list is created to store the merged and sorted elements. A dummy node result is initially
+            created to simplify the code.
 
-            After reading the input string, the code calculates the length of the string using the length() function and
-            stores it in the integer variable n. This step is necessary to determine the length of the string, which is
-            needed for iterating over its characters.
-            <br>
-            <mark>3. Reversing the String:-</mark>
+            Using a for loop, the sorted values from the vector v are used to create new nodes and build the merged
+            linked list. The result pointer is moved to the next node with each iteration.
 
-            The code enters a while loop with the condition i < j, where i starts at 0 and j starts at n - 1. These two
-                pointers (i and j) are used to swap characters in the string to reverse it. Inside the loop, the swap
-                function is used to swap the characters at positions i and j in the string str. This effectively
-                reverses the characters at these positions. After the swap, i is incremented by 1, and j is decremented
-                by 1, bringing the pointers closer to each other for the next iteration. <br>
 
-                <mark>4. Exiting the Loop:-</mark> The loop continues until i is no longer less than j. When i becomes
-                equal to or greater than j, the loop exits
-                because there are no more characters to swap. 
-                <br>
-                <mark>5. Printing the Reversed String:-</mark>Finally, the code prints the
-                reversed string using cout.
+            The temp pointer is used to keep track of the head of the merged linked list. It is set to the next node of
+            the dummy node result.
+            <mark>5. output:-</mark>
+            Finally, the code prints the elements of the merged linked list, displaying the result.
+
+
+
+
+
+
         </p>
     </div>
 
@@ -184,12 +195,12 @@
 
     <div class="secondpara">
         <h4>solution-></h4>
-        <a href="https://ide.geeksforgeeks.org/online-cpp14-compiler/67528048-7372-469e-a324-9792b47f42ca"
+        <a href="https://ide.geeksforgeeks.org/online-cpp14-compiler/b1e41ea7-8c69-44f5-855a-90dbe51bfc1f"
             target="_blank">View Code 1</a>
         <br>
-        Time Complexity = O(n)
+        Time Complexity = O((m + n) * log(m + n))
         <br>
-        Space Complexity = O(1)
+        Space Complexity = O(m + n)
     </div>
 </body>
 

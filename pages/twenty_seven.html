@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>11: Reverse a string.</title>
+    <title>27: Check for balanced parentheses using a stack.</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous" />
 
@@ -113,7 +113,7 @@
 <body>
 
 
-    <h1 class="hone">11: Reverse a string.
+    <h1 class="hone">27: Check for balanced parentheses using a stack.
         <div class="stopwatch">
             <span>⏳⌚</span>
             <span id="display">00:00:00</span>
@@ -125,57 +125,53 @@
     <div class="alllines2">
         <h4>Question:-</h4>
         <p>
-            Reverse a string.
+            Check for balanced parentheses using a stack.
             <br>
             Example 1:
             <br>
-            Input:
-            <br>
-            str = "hello"
-            <br>
-            Output: "olleh"
+            Input: exp = “[()]{}{[()()]()}” <br>
+            Output: Balanced<br>
+            Explanation: all the brackets are well-formed<br>
 
-            <br>
-            Example 2:
-            <br>
-            Input:
-            <br>
-            str = "world"
-            <br>
-            Output: "dlrow"
+            Example 2: <br>
+            Input: exp = “[(])”<br>
+            Output: Not Balanced<br>
+            Explanation: 1 and 4 brackets are not balanced because
+            there is a closing ‘]’ before the closing ‘(‘
             <br>
         </p>
     </div>
     <div class="alllines">
         <h4>Steps to solve:-</h4>
         <p>
+            <mark>1. areBracketsBalanced function:-</mark> <br>
+            The areBracketsBalanced function takes a string expr as input and returns a boolean value to indicate
+            whether the brackets are balanced or not. <br>
 
-            <mark>1. Input Reading:-</mark>
+            Inside the areBracketsBalanced function: <br>
 
-            The program starts by declaring a string variable str.
-            It uses cin to read a string input from the user and stores it in the str variable. The user enters a
-            string, and that string becomes the value of str.
-            <br>
-            <mark>2. String Length Calculation:-</mark>
+            A stack char called temp is declared to hold the previous brackets.
+                A for loop iterates through each character in the input expr. <br>
+                <mark>Within the loop:-</mark> <br>
 
-            After reading the input string, the code calculates the length of the string using the length() function and
-            stores it in the integer variable n. This step is necessary to determine the length of the string, which is
-            needed for iterating over its characters.
-            <br>
-            <mark>3. Reversing the String:-</mark>
+                If the stack is empty, the code pushes the current character onto the stack, assuming it is an opening
+                bracket. <br>
+                If the stack is not empty, it checks whether the current character forms a complete pair with the top
+                character on the stack. If it does, it pops the opening bracket from the stack, indicating that the pair
+                is balanced. <br>
+                If the current character is neither an opening bracket nor forms a balanced pair with the top of the
+                stack, it is pushed onto the stack. <br>
+                After processing all characters in the input string, if the stack is empty, it means that all brackets
+                are balanced. The function returns true. Otherwise, it returns false. <br>
 
-            The code enters a while loop with the condition i < j, where i starts at 0 and j starts at n - 1. These two
-                pointers (i and j) are used to swap characters in the string to reverse it. Inside the loop, the swap
-                function is used to swap the characters at positions i and j in the string str. This effectively
-                reverses the characters at these positions. After the swap, i is incremented by 1, and j is decremented
-                by 1, bringing the pointers closer to each other for the next iteration. <br>
+                <mark>2. In the main function:- </mark>
 
-                <mark>4. Exiting the Loop:-</mark> The loop continues until i is no longer less than j. When i becomes
-                equal to or greater than j, the loop exits
-                because there are no more characters to swap. 
-                <br>
-                <mark>5. Printing the Reversed String:-</mark>Finally, the code prints the
-                reversed string using cout.
+                A test expression expr (e.g., "{()}[]") is declared. <br>
+                The areBracketsBalanced function is called with the test expression. <br>
+                Depending on the result, "Balanced" or "Not Balanced" is printed. <br>
+
+
+
         </p>
     </div>
 
@@ -184,7 +180,7 @@
 
     <div class="secondpara">
         <h4>solution-></h4>
-        <a href="https://ide.geeksforgeeks.org/online-cpp14-compiler/67528048-7372-469e-a324-9792b47f42ca"
+        <a href="https://ide.geeksforgeeks.org/online-cpp14-compiler/c0cb18a9-4d0f-4ef1-a214-76d07055d245"
             target="_blank">View Code 1</a>
         <br>
         Time Complexity = O(n)
