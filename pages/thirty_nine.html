@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>39: Perform a preorder traversal of a binary tree.</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous" />
+
+
+
+
+    <style>
+        * {
+            line-height: 2.0;
+            /* background-color: rgb(230, 210, 210); */
+        }
+
+        .hone {
+            margin: 10px;
+            margin-right: 25px;
+            margin-left: 25px;
+            border: 2px solid black;
+            text-align: center;
+            background-color: rgb(230, 210, 210);
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        }
+
+        .alllines2 {
+            margin: 10px;
+            margin-right: 25px;
+            margin-left: 25px;
+            padding: 20px;
+            /* width: 40%; */
+            border: 2px solid black;
+            /* text-align: center; */
+            background-color: rgb(230, 210, 210);
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            /* display: inline-block; */
+
+        }
+
+        .alllines {
+            margin: 10px;
+            margin-right: 25px;
+            margin-left: 25px;
+            padding: 20px;
+            /* width: 40%; */
+            border: 2px solid black;
+            /* text-align: center; */
+            background-color: rgb(230, 210, 210);
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            /* display: inline-block; */
+
+        }
+
+
+        .secondpara {
+            margin: 10px;
+            margin-right: 25px;
+            margin-left: 25px;
+            padding: 20px;
+            border: 2px solid black;
+            /* text-align: center; */
+            background-color: rgb(230, 210, 210);
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+
+        }
+
+
+        mark {
+            background-color: yellow;
+            /* You can also add other styles as needed */
+        }
+
+        .stopwatch {
+            font-size: 25px;
+        }
+    </style>
+
+    <!-- ---------------------------------------------------------------------- -->
+    <script>
+        let timer;
+        let seconds = 0;
+        let minutes = 0;
+        let hours = 0;
+
+        function updateTime() {
+            seconds++;
+            if (seconds === 60) {
+                seconds = 0;
+                minutes++;
+                if (minutes === 60) {
+                    minutes = 0;
+                    hours++;
+                }
+            }
+
+            const timeString = `${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+            document.getElementById("display").textContent = timeString;
+        }
+
+        // Start the stopwatch automatically when the page loads
+        window.addEventListener("load", function () {
+            timer = setInterval(updateTime, 1000);
+        });
+
+    </script>
+    <!-- ---------------------------------------------------------------------- -->
+</head>
+
+<body>
+
+
+    <h1 class="hone">39: Perform a preorder traversal of a binary tree.
+        <div class="stopwatch">
+            <span>⏳⌚</span>
+            <span id="display">00:00:00</span>
+        </div>
+    </h1>
+
+
+
+    <div class="alllines2">
+        <h4>Question:-</h4>
+        <p>
+            Perform a preorder traversal of a binary tree.
+            <br>
+            Example 1:
+            <br>
+            Input: <br>according to the question<br>
+            Output: <br>
+            Preorder traversal of binary tree is: <br>
+            1 2 4 5 3 6
+
+
+        </p>
+    </div>
+    <div class="alllines">
+        <h4>Steps to solve:-</h4>
+        <p>
+
+
+
+            <mark>1. struct Node:-</mark> <br>
+            This is the definition of a structure representing a binary tree node. Each node has an integer data value,
+            a left child pointer, and a right child pointer. The constructor for the Node structure sets the data value
+            and initializes the child pointers to NULL. <br>
+
+            <mark>2. void printPreorder(struct Node* node):-</mark> <br>
+            This is a recursive function to perform a preorder traversal of a binary tree. Preorder traversal means
+            visiting the root node first, followed by the left subtree, and then the right subtree. The function takes a
+            pointer to a Node as an argument. <br>
+
+            <mark>3. int main():-</mark> <br>
+            The main function is the entry point of the program. Inside main, a binary tree is created, and the
+            printPreorder function is called to print the preorder traversal of the tree. <br>
+
+            <mark>4. Creating the binary tree:-</mark> <br>
+            In main, a binary tree is created with the following structure: <br>
+
+            Root node (with data 1)
+            Left child of the root (with data 2)
+            Left child of node 2 (with data 4)
+            Right child of node 2 (with data 5)
+            Right child of the root (with data 3)
+            Right child of node 3 (with data 6)
+            Printing the preorder traversal:
+            After constructing the binary tree, the printPreorder function is called with the root node as an argument
+            to print the preorder traversal. The preorder traversal output is displayed, showing the order in which the
+            nodes are visited. <br>
+
+
+
+
+        </p>
+    </div>
+
+
+
+
+    <div class="secondpara">
+        <h4>solution-></h4>
+        <a href="https://ide.geeksforgeeks.org/online-cpp14-compiler/5f8e042a-61ed-4ad5-a912-adfb3048233c"
+            target="_blank">View Code 1</a>
+        <br>
+
+        Time Complexity = O(n)
+        <br>
+        Space Complexity = O(1)
+        <br>
+    </div>
+</body>
+
+</html>

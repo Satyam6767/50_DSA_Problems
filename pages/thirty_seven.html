@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>37: Implement a binary search tree (BST).</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous" />
+
+
+
+
+    <style>
+        * {
+            line-height: 2.0;
+            /* background-color: rgb(230, 210, 210); */
+        }
+
+        .hone {
+            margin: 10px;
+            margin-right: 25px;
+            margin-left: 25px;
+            border: 2px solid black;
+            text-align: center;
+            background-color: rgb(230, 210, 210);
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        }
+
+        .alllines2 {
+            margin: 10px;
+            margin-right: 25px;
+            margin-left: 25px;
+            padding: 20px;
+            /* width: 40%; */
+            border: 2px solid black;
+            /* text-align: center; */
+            background-color: rgb(230, 210, 210);
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            /* display: inline-block; */
+
+        }
+
+        .alllines {
+            margin: 10px;
+            margin-right: 25px;
+            margin-left: 25px;
+            padding: 20px;
+            /* width: 40%; */
+            border: 2px solid black;
+            /* text-align: center; */
+            background-color: rgb(230, 210, 210);
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            /* display: inline-block; */
+
+        }
+
+
+        .secondpara {
+            margin: 10px;
+            margin-right: 25px;
+            margin-left: 25px;
+            padding: 20px;
+            border: 2px solid black;
+            /* text-align: center; */
+            background-color: rgb(230, 210, 210);
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+
+        }
+
+
+        mark {
+            background-color: yellow;
+            /* You can also add other styles as needed */
+        }
+
+        .stopwatch {
+            font-size: 25px;
+        }
+    </style>
+
+    <!-- ---------------------------------------------------------------------- -->
+    <script>
+        let timer;
+        let seconds = 0;
+        let minutes = 0;
+        let hours = 0;
+
+        function updateTime() {
+            seconds++;
+            if (seconds === 60) {
+                seconds = 0;
+                minutes++;
+                if (minutes === 60) {
+                    minutes = 0;
+                    hours++;
+                }
+            }
+
+            const timeString = `${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+            document.getElementById("display").textContent = timeString;
+        }
+
+        // Start the stopwatch automatically when the page loads
+        window.addEventListener("load", function () {
+            timer = setInterval(updateTime, 1000);
+        });
+
+    </script>
+    <!-- ---------------------------------------------------------------------- -->
+</head>
+
+<body>
+
+
+    <h1 class="hone">37: Implement a binary search tree (BST).
+        <div class="stopwatch">
+            <span>⏳⌚</span>
+            <span id="display">00:00:00</span>
+        </div>
+    </h1>
+
+
+
+    <div class="alllines2">
+        <h4>Question:-</h4>
+        <p>
+            Implement a binary search tree (BST).
+            <br>
+            Example 1:
+            <br>
+            Input:  <br>The BST is created by inserting several elements (50, 30, 20, 40, 70, 60, 80) into it. <br>
+            Two keys are selected for searching: 6 and 60. <br>
+            Output:  <br>6 not found <br>
+            60 found <br>
+
+
+        </p>
+    </div>
+    <div class="alllines">
+        <h4>Steps to solve:-</h4>
+        <p>
+
+            <mark>1. struct node:- </mark> <br> Defines a structure for a binary tree node, containing a key (integer value), a pointer to the
+            left child, and a pointer to the right child. <br>
+
+            <mark>2. newNode(int item):- </mark> <br> A utility function to create a new BST node with the specified key value. It allocates
+            memory for the node, initializes its key value, and sets both child pointers to NULL. <br>
+
+            <mark>3. insert(struct node* node, int key):- </mark> <br> A recursive utility function to insert a new node with the given key
+            into the BST. It follows the principles of a BST to decide whether to insert the key in the left or right
+            subtree based on a comparison with the current node's key. <br>
+
+            <mark>4. search(struct node* root, int key):-</mark> <br>A recursive utility function to search for a key in the BST. It
+            recursively traverses the BST, comparing the target key with the keys of nodes to determine if the key is
+            present in the tree. <br>
+
+            <mark>5. In the main function:-</mark> <br>
+
+            A struct node* root pointer is initialized as NULL, representing an empty BST.
+            Several elements are inserted into the BST using the insert function.
+            Two keys, 6 and 60, are used to demonstrate searching in the BST. The search function is called for each key
+            to check if they are found or not, and appropriate messages are printed. <br>
+
+
+
+        </p>
+    </div>
+
+
+
+
+    <div class="secondpara">
+        <h4>solution-></h4>
+        <a href="https://ide.geeksforgeeks.org/online-cpp14-compiler/4ad45515-f3a0-4b86-b31a-e7faf25b3642"
+            target="_blank">View Code 1</a>
+        <br>
+
+        Time Complexity = O(h)
+        <br>
+        Space Complexity = O(h)
+        <br>
+        h = height
+    </div>
+</body>
+
+</html>

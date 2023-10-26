@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>40: Perform a postorder traversal of a binary tree.</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous" />
+
+
+
+
+    <style>
+        * {
+            line-height: 2.0;
+            /* background-color: rgb(230, 210, 210); */
+        }
+
+        .hone {
+            margin: 10px;
+            margin-right: 25px;
+            margin-left: 25px;
+            border: 2px solid black;
+            text-align: center;
+            background-color: rgb(230, 210, 210);
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        }
+
+        .alllines2 {
+            margin: 10px;
+            margin-right: 25px;
+            margin-left: 25px;
+            padding: 20px;
+            /* width: 40%; */
+            border: 2px solid black;
+            /* text-align: center; */
+            background-color: rgb(230, 210, 210);
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            /* display: inline-block; */
+
+        }
+
+        .alllines {
+            margin: 10px;
+            margin-right: 25px;
+            margin-left: 25px;
+            padding: 20px;
+            /* width: 40%; */
+            border: 2px solid black;
+            /* text-align: center; */
+            background-color: rgb(230, 210, 210);
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            /* display: inline-block; */
+
+        }
+
+
+        .secondpara {
+            margin: 10px;
+            margin-right: 25px;
+            margin-left: 25px;
+            padding: 20px;
+            border: 2px solid black;
+            /* text-align: center; */
+            background-color: rgb(230, 210, 210);
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+
+        }
+
+
+        mark {
+            background-color: yellow;
+            /* You can also add other styles as needed */
+        }
+
+        .stopwatch {
+            font-size: 25px;
+        }
+    </style>
+
+    <!-- ---------------------------------------------------------------------- -->
+    <script>
+        let timer;
+        let seconds = 0;
+        let minutes = 0;
+        let hours = 0;
+
+        function updateTime() {
+            seconds++;
+            if (seconds === 60) {
+                seconds = 0;
+                minutes++;
+                if (minutes === 60) {
+                    minutes = 0;
+                    hours++;
+                }
+            }
+
+            const timeString = `${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+            document.getElementById("display").textContent = timeString;
+        }
+
+        // Start the stopwatch automatically when the page loads
+        window.addEventListener("load", function () {
+            timer = setInterval(updateTime, 1000);
+        });
+
+    </script>
+    <!-- ---------------------------------------------------------------------- -->
+</head>
+
+<body>
+
+
+    <h1 class="hone">40: Perform a postorder traversal of a binary tree.
+        <div class="stopwatch">
+            <span>⏳⌚</span>
+            <span id="display">00:00:00</span>
+        </div>
+    </h1>
+
+
+
+    <div class="alllines2">
+        <h4>Question:-</h4>
+        <p>
+            Perform a postorder traversal of a binary tree.
+            <br>
+            Example 1:
+            <br>
+            Input: <br>according to the question<br>
+            Output: <br>
+            Postorder traversal of binary tree is  <br>
+            4 5 2 3 1 
+
+
+        </p>
+    </div>
+    <div class="alllines">
+        <h4>Steps to solve:-</h4>
+        <p>
+
+
+
+            <mark>1. struct Node:-</mark> <br>
+            This structure represents a binary tree node. Each node has an integer data value and two child pointers
+            (left and right). <br>
+
+            <mark>2. Node* newNode(int data):-</mark> <br>
+            This is a utility function to create a new node for the binary tree. It takes an integer data as an
+            argument, allocates memory for a new node, sets its data value, and initializes its child pointers to NULL.
+            It returns a pointer to the newly created node. <br>
+
+            <mark>3. void printPostorder(struct Node* node):- </mark><br>
+            This function performs a postorder traversal of the binary tree. In a postorder traversal, the left subtree
+            is explored first, followed by the right subtree, and then the current node. The function takes a pointer to
+            a Node as an argument.<br>
+
+            <mark>4. int main():-</mark><br>
+            The main function is the entry point of the program. Inside main, a binary tree is created, and the
+            printPostorder function is called to print the postorder traversal of the tree.<br>
+
+            <mark>5. Creating the binary tree:-</mark><br>
+            In main, a binary tree is created with the following structure:<br>
+
+            Root node (with data 1)<br>
+            Left child of the root (with data 2)<br>
+            Left child of node 2 (with data 4)<br>
+            Right child of node 2 (with data 5)<br>
+            Right child of the root (with data 3)<br>
+
+            <mark>6 Printing the postorder traversal:-</mark><br>
+            After constructing the binary tree, the printPostorder function is called with the root node as an argument
+            to print the postorder traversal. The postorder traversal output is displayed, showing the order in which
+            the nodes are visited, following the "bottom-up" approach. <br>
+
+
+
+
+        </p>
+    </div>
+
+
+
+
+    <div class="secondpara">
+        <h4>solution-></h4>
+        <a href="https://ide.geeksforgeeks.org/online-cpp14-compiler/22011a75-7113-4ac4-a47a-7d82231373da"
+            target="_blank">View Code 1</a>
+        <br>
+
+        Time Complexity = O(n)
+        <br>
+        Space Complexity = O(1)
+        <br>
+    </div>
+</body>
+
+</html>
